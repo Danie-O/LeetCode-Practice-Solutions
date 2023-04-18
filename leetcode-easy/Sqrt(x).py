@@ -9,6 +9,7 @@ class Solution:
     def mySqrt(self, x: int) -> int:
         if x <= 1:
             return x
+
         i = 1
         square = i * i
         while x >= square:
