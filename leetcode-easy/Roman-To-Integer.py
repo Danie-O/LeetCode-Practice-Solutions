@@ -12,3 +12,37 @@
 
     Given a roman numeral, convert it to an integer.
 """
+
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        # if roman value > next roman value, add to result
+        # if roman value < next roman value (eg. IX), subtract integer value from result
+
+        romans = {'I': 1, 'V': 5, 'X': 10,
+                  'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        result = 0
+
+        for i in range(len(s)):
+            if i + 1 < len(s) and romans[s[i]] < romans[s[i + 1]]:
+                result -= romans[s[i]]
+            else:
+                result += romans[s[i]]
+
+        return result
+
+
+# Examples
+example = Solution()
+
+# Example 1:
+s = "III"
+print(example.romanToInt(s))
+# Output: 3
+# Explanation: III = 3.
+
+# Example 2:
+s = "LVIII"
+print(example.romanToInt(s))
+# Output: 58
+# Explanation: L = 50, V= 5, III = 3.
