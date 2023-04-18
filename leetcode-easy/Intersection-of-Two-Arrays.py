@@ -19,4 +19,4 @@ example = Solution()
 nums1 = [1, 2, 2, 1]
 nums2 = [2, 2]
 print(example.intersection(nums1, nums2))
-# Output: true
+# Output: [2]
