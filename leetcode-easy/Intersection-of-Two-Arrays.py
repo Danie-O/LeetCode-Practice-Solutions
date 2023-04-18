@@ -11,6 +11,17 @@ class Solution:
         # CONCISE SOLUTION.
         return list(set(nums1) & set(nums2))  # use logical AND property
 
+        # SECOND APPROACH
+        # set1 = set(nums1)
+        # set2 = set(nums2)
+        # res = []
+
+        # for num in set1:
+        #     if num in set2:
+        #         res.append(num)
+
+        # return res
+
 
 # Examples
 example = Solution()
