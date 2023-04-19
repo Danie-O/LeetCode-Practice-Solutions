@@ -7,4 +7,40 @@ All occurrences of a character must be replaced with another character while pre
 
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        pass
+        # USING ONE HASHMAP
+        hashmap = {}
+
+        for c1, c2 in zip(s, t):
+            if (c1 in hashmap) and (hashmap[c1] != c2):
+                return False
+            hashmap[c1] = c2
+        return True
+
+        # USING TWO HASHMAPS
+        # mapST, mapTS = {}, {}
+
+        # for c1, c2 in zip(s, t):
+        #     if (c1 in mapST and mapST[c1] != c2) or (c2 in mapTS and mapTS[c2] != c1):
+        #         return False
+        #     mapST[c1] = c2
+        #     mapTS[c2] = c1
+
+        # return True
+
+
+# Examples
+example = Solution()
+
+# Example 1:
+s = "egg"
+t = "add"
+print(example.isIsomorphic(s, t))
+# Output: true
+# Explanation: e -> a (correct); g -> d (correct)
+
+# Example 2:
+s = "foo"
+t = "bar"
+print(example.isIsomorphic(s, t))
+# Output: false
+# Explanation: f -> b (correct); o -> a and r (incorrect)
