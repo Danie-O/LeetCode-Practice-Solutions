@@ -7,25 +7,17 @@ All occurrences of a character must be replaced with another character while pre
 
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        # USING ONE HASHMAP
-        hashmap = {}
+        # USING HASHMAPS
+        mapST, mapTS = {}, {}
 
         for c1, c2 in zip(s, t):
-            if (c1 in hashmap) and (hashmap[c1] != c2):
+            if (c1 in mapST and mapST[c1] != c2) or (c2 in mapTS and mapTS[c2] != c1):
+                #  we check both hashmaps since; "no two characters may map to the same character"
                 return False
-            hashmap[c1] = c2
+            mapST[c1] = c2
+            mapTS[c2] = c1
+
         return True
-
-        # USING TWO HASHMAPS
-        # mapST, mapTS = {}, {}
-
-        # for c1, c2 in zip(s, t):
-        #     if (c1 in mapST and mapST[c1] != c2) or (c2 in mapTS and mapTS[c2] != c1):
-        #         return False
-        #     mapST[c1] = c2
-        #     mapTS[c2] = c1
-
-        # return True
 
 
 # Examples
