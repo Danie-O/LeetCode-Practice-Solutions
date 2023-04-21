@@ -40,3 +40,25 @@ class Solution:
             pairs += (count * (count-1)) // 2
 
         return pairs
+
+
+# Examples
+example = Solution()
+
+# Example 1:
+nums = [1, 2, 3, 1, 1, 3]
+print(example.numIdenticalPairs(nums))
+# Output: 4
+# Explanation: There are 4 good pairs (0,3), (0,4), (3,4), (2,5) 0-indexed.
+
+# Example 2:
+nums = [1, 1, 1, 1]
+print(example.numIdenticalPairs(nums))
+# Output: 6
+# Explanation: Each pair in the array are good.
+
+# Example 3:
+nums = [1, 2, 3]
+print(example.numIdenticalPairs(nums))
+# Output: 0
+# Explanation: There are no identical pairs in input list.
