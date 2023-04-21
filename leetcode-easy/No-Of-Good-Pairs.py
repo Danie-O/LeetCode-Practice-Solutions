@@ -1,4 +1,5 @@
 from typing import List
+from collections import Counter
 
 """ PROMPT: Given an array of integers nums, return the number of good pairs.
 
@@ -17,17 +18,25 @@ class Solution:
         # return pairs
 
         # Solution 2: sorting + two pointers
-        l, r = 0, 1
-        pairs = 0
-        nums.sort()  # sort list in-place
+        # l, r = 0, 1
+        # pairs = 0
+        # nums.sort()  # sort list in-place
 
-        while r < len(nums):
-            if nums[l] == nums[r]:
-                pairs += r - l
-            else:
-                l = r
-            r += 1
-        return pairs
+        # while r < len(nums):
+        #     if nums[l] == nums[r]:
+        #         pairs += r - l
+        #     else:
+        #         l = r
+        #     r += 1
+        # return pairs
 
         # Solution 3: using collections.Counter
-        pass
+        # with this approach, we need to consider the fact that the number of possible
+        # pairs = combinations of numbers
+        counts = Counter(nums)
+        pairs = 0
+
+        for count in counts.values():
+            pairs += (count * (count-1)) // 2
+
+        return pairs
