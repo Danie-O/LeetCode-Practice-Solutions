@@ -35,3 +35,23 @@ class Solution:
             l2 = l2.next if l2 else None
         
         return dummy.next
+    
+
+# Examples
+example = Solution()
+
+# Example 1:
+# Input: 
+l1 = [2,4,3]
+l2 = [5,6,4]
+print(example.addTwoNumbers(l1, l2))
+# Output: [7,0,8]
+# Explanation: 342 + 465 = 807.
+
+# Example 2:
+
+# Input: 
+l1 = [0]
+l2 = [0]
+print(example.addTwoNumbers(l1, l2))
+# Output: [0]
