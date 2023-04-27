@@ -15,11 +15,21 @@ class Solution:
 
         # Run loop until we get to end of oringinal linked list
         while curr:
-            nxt = curr.next
+            # Let next node to visit be the next node of current node
+            next_node = curr.next
+
+            # Change direction of current node by making its next pointer point to the preceeding node in original linked list
             curr.next = prev
-            prev = curr
-            curr = nxt
+
+            # Update previous and current pointers
+            prev, curr = curr, next_node
         return prev
 
 
+# Example 1:
+# Input: head = [1,2,3,4,5]
+# Output: [5,4,3,2,1]
 
+# Example 2:
+# Input: head = []
+# Output: []
