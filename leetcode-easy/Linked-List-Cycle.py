@@ -21,8 +21,7 @@ class Solution:
         #     if head in hashset:
         #         return True
         #     hashset.add(head)
-        #     head = head.next
-            
+        #     head = head.next 
         # return False
     
 
@@ -34,9 +33,21 @@ class Solution:
         #     fast = fast.next.next
 
         #     if slow == fast:
-        #         return True
-            
+        #         return True 
         # return False
+
+
+        # Using one pointer and assuming that value of unvisited nodes can't be none, and we don't need to reuse visited node values. 
+        # O(N) time, O(1) space.
+        slow = head
+
+        while slow:
+            if slow.val == None:
+                return True
+            slow.val = None # change value to show it has been visited
+            slow = slow.next
+        return False
+
 
 
 # EXAMPLE 1:   
