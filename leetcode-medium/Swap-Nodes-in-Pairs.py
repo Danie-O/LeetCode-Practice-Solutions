@@ -12,4 +12,24 @@ class ListNode:
 
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        dummy = ListNode(None, head)
+        prev, curr = dummy, head
+        while curr and curr.next:
+            prev.next = curr.next
+            curr.next = curr.next.next
+            prev.next.next = curr
+            prev, curr = curr, curr.next
+        return dummy.next
+
+        # using recursion
+        # def swapPairs(self, head):
+        #     if not head or not head.next: return head
+
+        #     new_start = head.next.next
+        #     head, head.next = head.next, head
+        #     head.next.next = self.swapPairs(new_start)
+        #     return head
+
+
+
+            
