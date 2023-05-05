@@ -15,4 +15,25 @@ class ListNode:
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        """Steps:
+            - Use Floyd's cycle algo with 2 pointers to find where cycle exists
+            - Start another cycle with head and slow, and return head when head reaches slow
+        """    
+        slow, fast = head, head
+
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            # if we encounter a cycle, reset slow to head of linked list
+            # continue until slow reaches the beginning of the cycle and return slow
+            if slow == fast:
+                slow = head
+                while slow != fast:
+                    slow = slow.next
+                    fast = fast.next
+                return slow
+        return None
+
+
+
+
