@@ -38,6 +38,14 @@ class Solution:
         return one
 
 
+# Example
+# tail = createLL([8,4,5])
+# headA=createLL([4, 1])
+# headB=createLL([5,6,1])
 
+# last_nodeA = move_to_lastNode(headA)
+# last_nodeA.next=tail
 
+# last_nodeB = move_to_lastNode(headB)
+# last_nodeB.next=tail
 
