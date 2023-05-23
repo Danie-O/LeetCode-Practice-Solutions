@@ -13,19 +13,7 @@ class TreeNode:
 
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-            # def dfs(node):
-            #     if not node: return
-
-            #     ans.append(node.val)
-            #     dfs(node.left)
-            #     dfs(node.right)
-            #     return   
         
-            # ans = []
-            
-            # dfs(root)
-            # return ans
-
         # SHORTER SOLUTION --> O(N) time and O(N) space
         if not root:
             return []
@@ -34,6 +22,20 @@ class Solution:
                     self.preorderTraversal(root.left) + 
                     self.preorderTraversal(root.right)
                 )
+        
+        # RECURSIVE SOLUTION WITH HELPER FUNCTION
+        # def dfs(node):
+        #     if not node: return
+
+        #     ans.append(node.val)
+        #     dfs(node.left)
+        #     dfs(node.right)
+        #     return   
+        
+        # ans = []
+        
+        # dfs(root)
+        # return ans
 
         #  ITERATIVE SOLUTION --> O(N) time and O(N) space**
         # head = root
