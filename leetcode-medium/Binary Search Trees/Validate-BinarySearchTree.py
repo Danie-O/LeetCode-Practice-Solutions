@@ -8,6 +8,7 @@ class TreeNode:
         self.right = right
 
 class Solution:
+    # TIME COMPLEXITY: O(N); SPACE COMPLEXITY: O(1) --->ignoring the recursive stack
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         def valid(node:TreeNode, left, right):
             if not node: return True
