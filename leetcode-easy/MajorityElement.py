@@ -15,9 +15,11 @@ class Solution:
         #     if (len(nums)) // 2 < nums_map[num]:
         #         return num
 
+        # Using Moore's voting algorithm
         # Time: O(n), Space: O(1)
         majority_num = nums[0]
         count = 0
+
         for num in nums:
             count += 1 if num == majority_num else -1
             if count == 0:
