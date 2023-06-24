@@ -1,5 +1,7 @@
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
+        # TIME: O(n) , where n = len(nums)
+        # SPACE: O(n), approximately O(n) because result takes 2n space since its size is twice of the input array
         n = len(nums)
         ans = [0] * (2 * n)
         
