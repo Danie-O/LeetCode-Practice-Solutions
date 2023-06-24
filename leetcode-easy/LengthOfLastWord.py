@@ -11,16 +11,16 @@ class Solution:
         # return len(st[-1])
 
         # Another approach without looping through all words
-        c = 0
-        for i in s[::-1]: 
-            #  start going through charcters from end of string
-            # if we encounter a space, thats the start of the last word so return count of chars in that word(c)
-            if i == " ":  
-                if c >= 1:
-                    return c
+        count = 0
+        for char in s[::-1]: 
+            #  start going through characters from end of string
+            # if we encounter a space, thats the start of the last word, return count of chars in that word(c)
+            if char == " ":  
+                if count >= 1:
+                    return count
             else:
-                c += 1
-        return c
+                count += 1
+        return count
         
 
 # Examples
