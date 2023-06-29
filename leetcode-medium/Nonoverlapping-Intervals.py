@@ -2,12 +2,11 @@ class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         """
             - sort intervals
-            - initialise prev & curr = 0, 1
+            - initialise prev
             - "" removed_count = 0
             - return 0 if base case is true
-            - else,
+            - else, for every interval in input;
             - if prev[1] > curr[0]:
-                curr = curr + 1
                 removed_count += 1
             - return removed_count
         """
