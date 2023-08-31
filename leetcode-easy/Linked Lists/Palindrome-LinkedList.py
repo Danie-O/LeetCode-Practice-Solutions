@@ -29,7 +29,7 @@ class Solution:
             Steps:
             - Use two pointer approach to find middle of list
             - Reverse second half of list
-            - Using two pointers from front and end of reversed half, check if palindrome
+            - Using two pointers from head of linked list and beginning of reversed half, check if palindrome
         """
         slow, fast = head, head
         
