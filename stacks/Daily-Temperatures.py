@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         res = []
@@ -16,6 +18,9 @@ class Solution:
 
 # Input: temperatures = [73,74,75,71,69,72,76,73]
 # Output: [1,1,4,2,1,1,0,0]
+solution = Solution()
+print(solution.dailyTemperatures([73,74,75,71,69,72,76,73]))
+
 # Example 2:
 
 # Input: temperatures = [30,40,50,60]
