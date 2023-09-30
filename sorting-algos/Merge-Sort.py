@@ -21,9 +21,9 @@ def merge(left, right):
     
     if i < len(left):
         res.extend(left[i:])
-    
     if j < len(right):
         res.extend(right[j:])
     return res
+
 
 print(mergeSort([5, 1, 7, 3, 2, 8, 6, 4]))
