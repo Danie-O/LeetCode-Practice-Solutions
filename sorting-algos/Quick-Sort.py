@@ -1,28 +1,29 @@
 def quickSort(array, left_index, right_index):
-    if len(items) <= 1: return items
+    if len(array) <= 1: return items
+    pivot_index = partition(array, left_index, right_index)
 
-    pivot_index = partition(items, left_index, right_index)
     if left_index < pivot_index - 1:
-        quickSort(items, left_index, pivot_index - 1)
+        quickSort(array, left_index, pivot_index - 1)
     if right_index > pivot_index:
-        quickSort(items, pivot_index, right_index)
+        quickSort(array, pivot_index, right_index)
     
-    return items
+    return array
 
 
 def partition(items, left_index, right_index):
     pivot = (left_index + right_index) // 2
+    pivot = items[pivot]
 
     l, r = left_index, right_index
 
     while l <= r:
-        while items[l] < items[pivot]:
+        while items[l] < pivot:
             l += 1
-        while items[r] > items[pivot]:
+        while items[r] > pivot:
             r -= 1
         
         if l <= r:
-            l, r = items[r], items[l]
+            items[l], items[r] = items[r], items[l]
             l += 1
             r -= 1
         
@@ -30,4 +31,6 @@ def partition(items, left_index, right_index):
     return l
 
 
-        
+a = [4, 65, 2, -31, 0, 99, 83, 782, 1]
+a = quickSort(a, 0, len(a) - 1)
+print(a)
