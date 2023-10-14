@@ -29,10 +29,11 @@ class Solution:
             child = child.next
         
         if current.next: # if current is not the end of list
-            # now, update current, child and current.next
+            # now, update child and current.next
             child.next = current.next
             current.next.prev = child
-
+            
+        # update current and current.child to point to each other
         current.next = current.child
         current.child.prev = current
         
