@@ -37,7 +37,6 @@ class Solution:
             return True
         else: 
             board[i][j] = word[index]
-            # return False
 
 
         
