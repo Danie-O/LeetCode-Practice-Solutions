@@ -12,7 +12,7 @@ class Solution:
         s, e = 0, 0
         res, count = 0, 0
         # iterate through both arrays and increment count if there is a new interval(start),
-        #  while current meeting is still ongoing (end)
+        #  while current meeting is still ongoing (start < end)
         while s < len(start):
             if start[s] < end[e]:
                 s += 1
