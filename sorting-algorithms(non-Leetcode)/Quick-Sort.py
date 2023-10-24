@@ -1,5 +1,5 @@
 def quickSort(array, left_index, right_index):
-    if len(array) <= 1: return items
+    if len(array) <= 1: return array
     pivot_index = partition(array, left_index, right_index)
 
     if left_index < pivot_index - 1:
