@@ -14,6 +14,7 @@ class Solution:
             elif nums[mid] == 1:
                 mid += 1
             else:
+                # swap mid and high
                 nums[mid], nums[high] = nums[high], nums[mid]
                 high -= 1
         
